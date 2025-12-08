@@ -1,4 +1,4 @@
-package org.example.entity;
+package org.example.Domain.entity;
 
 public class Consuptiom {
     private static int count = 1;

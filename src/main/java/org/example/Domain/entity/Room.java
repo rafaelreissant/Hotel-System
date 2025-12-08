@@ -1,6 +1,6 @@
-package org.example.entity;
+package org.example.Domain.entity;
 
-import org.example.entity.enums.RoomCategory;
+import org.example.Domain.entity.enums.RoomCategory;
 
 public class Room {
     private static int count = 1;
