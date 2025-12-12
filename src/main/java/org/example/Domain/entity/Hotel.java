@@ -5,37 +5,23 @@ import java.util.List;
 
 public class Hotel {
     private String name;
-    private String password;
-
     private List<Room> roomList = new ArrayList<>();
+    private List<Reserve> reserveList = new ArrayList<>();
 
-    public Hotel(String name, String password) {
+    public Hotel(String name) {
         this.name = name;
-        this.password = password;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public List<Room> getRoomList() {
         return roomList;
     }
 
-    public void setRoomList(List<Room> roomList) {
-        this.roomList = roomList;
+    public List<Reserve> getReserveList() {
+        return reserveList;
     }
 
     @Override
