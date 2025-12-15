@@ -39,5 +39,4 @@ public class Reserve {
     public List<Consumption> getRoomList() {
         return roomList;
     }
-
 }
