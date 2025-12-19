@@ -8,9 +8,15 @@ public class Consumption {
     private double value;
 
     public Consumption(String description, double value) {
-
         Description = description;
         this.value = value;
+        checkValue();
+    }
+
+    public void checkValue(){
+        if (value <= 0){
+            throw new IllegalArgumentException("The value can't be lower or equal to zero");
+        }
     }
 
     public String getId() {

@@ -9,9 +9,7 @@ public class Guest {
     private String email;
 
     public Guest(String name, String telephone, String email) {
-
         this.name = name;
-
         this.telephone = telephone;
         this.email = email;
     }
