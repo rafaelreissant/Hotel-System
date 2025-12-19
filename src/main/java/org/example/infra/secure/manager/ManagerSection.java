@@ -1,4 +1,4 @@
-package org.example.Domain.secure.manager;
+package org.example.infra.secure.manager;
 
 import org.example.Domain.entity.factory.ManagerFactory;
 

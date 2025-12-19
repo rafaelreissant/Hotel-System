@@ -1,7 +1,6 @@
-package org.example.Domain.secure.staff;
+package org.example.infra.secure.staff;
 
 import org.example.Domain.entity.factory.StafFactory;
-import org.example.Domain.repository.StaffRepository;
 
 public class StaffSection {
     private static StafFactory staffLog;

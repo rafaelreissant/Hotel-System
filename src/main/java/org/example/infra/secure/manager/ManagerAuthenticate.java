@@ -1,8 +1,8 @@
-package org.example.Domain.secure.manager;
+package org.example.infra.secure.manager;
 
 import org.example.Domain.entity.enums.Role;
 import org.example.Domain.entity.factory.ManagerFactory;
-import org.example.Domain.repository.ManagerRepository;
+import org.example.infra.repository.ManagerRepository;
 
 public class ManagerAuthenticate {
 

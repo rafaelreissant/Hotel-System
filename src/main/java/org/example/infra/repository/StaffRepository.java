@@ -1,4 +1,4 @@
-package org.example.Domain.repository;
+package org.example.infra.repository;
 
 import org.example.Domain.entity.factory.StafFactory;
 

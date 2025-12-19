@@ -1,11 +1,8 @@
-package org.example.Domain.secure.staff;
+package org.example.infra.secure.staff;
 
 import org.example.Domain.entity.enums.Role;
-import org.example.Domain.entity.factory.ManagerFactory;
 import org.example.Domain.entity.factory.StafFactory;
-import org.example.Domain.repository.ManagerRepository;
-import org.example.Domain.repository.StaffRepository;
-import org.example.Domain.secure.manager.ManagerSection;
+import org.example.infra.repository.StaffRepository;
 
 public class StaffAuthenticate {
 

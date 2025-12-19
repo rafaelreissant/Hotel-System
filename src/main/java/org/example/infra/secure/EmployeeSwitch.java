@@ -1,19 +1,22 @@
-package org.example.Domain.secure;
+package org.example.infra.secure;
 
 import org.example.Domain.entity.enums.Role;
 import org.example.Domain.entity.factory.StafFactory;
-import org.example.Domain.secure.manager.ManagerAuthenticate;
-import org.example.Domain.secure.staff.StaffAuthenticate;
+import org.example.Domain.entity.strategy.interfaces.EmployeeFlowStrategy;
+import org.example.Domain.entity.strategy.strategyFlow.ManagerFlowStrategy;
+import org.example.Domain.entity.strategy.strategyFlow.StaffFlowStrategy;
+import org.example.infra.secure.manager.ManagerAuthenticate;
+import org.example.infra.secure.staff.StaffAuthenticate;
 
 import java.util.Scanner;
 
-public class UserSwitch {
+public class EmployeeSwitch {
 
     private final StaffAuthenticate staffAuthenticate;
     private final ManagerAuthenticate managerAuthenticate;
     private final Scanner scanner = new Scanner(System.in);
 
-    public UserSwitch(StaffAuthenticate staffAuthenticate, ManagerAuthenticate managerAuthenticate) {
+    public EmployeeSwitch(StaffAuthenticate staffAuthenticate, ManagerAuthenticate managerAuthenticate) {
         this.staffAuthenticate = staffAuthenticate;
         this.managerAuthenticate = managerAuthenticate;
     }
@@ -74,16 +77,16 @@ public class UserSwitch {
         if (role == null) return;
 
         switch (role) {
-            case MANAGER -> loginCompany(username, password);
-            case STAFF -> loginEmployee(username, password);
+            case MANAGER -> loginManager(username, password);
+            case STAFF -> loginStaff(username, password);
             default -> System.out.println("Invalid access level.");
         }
     }
 
     private void loginManager(String username, String password) {
         if (managerAuthenticate.logManager(username, password) != null) {
-            UserFlowStrategy strategy =
-                    new CompanyFlowStrategy(username, managerAuthenticate.getRepository());
+            EmployeeFlowStrategy strategy =
+                    new ManagerFlowStrategy(username, managerAuthenticate.getRepository());
 
             strategy.executeMenu();
         } else {
@@ -95,9 +98,9 @@ public class UserSwitch {
         StafFactory loggedEmployee = staffAuthenticate.logStaff(username, password);
 
         if (loggedEmployee != null) {
-            UserFlowStrategy strategy = new EmployeeFlowStrategy(
+            EmployeeFlowStrategy strategy = new StaffFlowStrategy(
                     username,
-                    authenticateEmployee.getRepository()
+                    staffAuthenticate.getRepository()
             );
             strategy.executeMenu();
         } else {
