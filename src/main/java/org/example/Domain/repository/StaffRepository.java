@@ -8,8 +8,8 @@ import java.util.Map;
 public class StaffRepository {
     private static final Map<String, StafFactory> staffs = new HashMap<>();
 
-    public void addStaff(StafFactory stafFactory, String name){
-        if (staffs.containsValue(staffs.get(name))){
+    public void addStaff(StafFactory stafFactory){
+        if (staffs.containsValue(stafFactory.getUsername())){
             throw new RuntimeException("Name already in use");
         }
         staffs.put(stafFactory.getUsername(), stafFactory);

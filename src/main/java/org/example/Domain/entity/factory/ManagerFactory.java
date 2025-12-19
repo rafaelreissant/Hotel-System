@@ -11,8 +11,8 @@ public class ManagerFactory  extends EmployeeFactory {
 
     private List<Room> roomList = new ArrayList<>();
 
-    public ManagerFactory(String username, String password, Role role) {
-        super(username, password, role);
+    public ManagerFactory(String username, String password) {
+        super(username, password, Role.MANAGER);
     }
 
     public List<Room> getRoomList() {

@@ -11,8 +11,8 @@ public class StafFactory extends EmployeeFactory {
 
     private List<Reserve> reserveList = new ArrayList<>();
 
-    public StafFactory(String username, String password, Role role) {
-        super(username, password, role);
+    public StafFactory(String username, String password) {
+        super(username, password, Role.STAFF);
     }
 
     public List<Reserve> getReserveList() {

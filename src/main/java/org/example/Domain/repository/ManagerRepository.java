@@ -8,12 +8,13 @@ import java.util.Map;
 public class ManagerRepository {
     private static final Map<String, ManagerFactory> managers = new HashMap<>();
 
-    public void addManager(ManagerFactory managerFactory, String name){
-        if (managers.containsValue(managers.get(name))){
+    public boolean addManager(ManagerFactory managerFactory){
+        if (managers.containsValue(managerFactory.getUsername())){
             throw new RuntimeException("Name already in use");
         }
         managers.put(managerFactory.getUsername(), managerFactory);
         System.out.println("Manager added with success");
+        return true;
     }
 
     public ManagerFactory searchManager(String manager){
