@@ -118,13 +118,13 @@ public class EmployeeSwitch {
     }
 
     private Role readAccessLevel() {
-        System.out.print("Enter COMPANY or EMPLOYEE: ");
+        System.out.print("Enter MANAGER or STAFF: ");
         String levelInput = scanner.nextLine().trim().toUpperCase();
 
         try {
             return Role.valueOf(levelInput);
         } catch (IllegalArgumentException e) {
-            System.out.println("Invalid access level. Must be COMPANY or EMPLOYEE.");
+            System.out.println("Invalid access level. Must be MANAGER or STAFF.");
             return null;
         }
     }

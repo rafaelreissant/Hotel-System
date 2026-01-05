@@ -22,12 +22,7 @@ public class StaffRepository {
 
     public boolean authenticateStaff(String name, String password){
         StafFactory stafFactory = staffs.get(name);
-        if (staffs.containsValue(staffs.get(name))){
-            throw new RuntimeException("Staff already created");
-        }
-        if (staffs.containsValue(staffs.get(password))){
-            throw new RuntimeException("Staff already created");
-        }
+
         return stafFactory != null && stafFactory.getPassword().equals(password);
     }
 }

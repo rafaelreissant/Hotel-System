@@ -23,12 +23,7 @@ public class ManagerRepository {
 
     public boolean authenticateManager(String name, String password){
         ManagerFactory managerFactory = managers.get(name);
-        if (managers.containsValue(managers.get(name))){
-            throw new RuntimeException("Manager already created");
-        }
-        if (managers.containsValue(managers.get(password))){
-            throw new RuntimeException("Manager already created");
-        }
+
         return managerFactory != null && managerFactory.getPassword().equals(password);
     }
 }
